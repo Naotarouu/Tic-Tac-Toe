@@ -65,6 +65,19 @@ namespace Tic_Tac_Toe
             player_winner();
         }
 
+        private void buttons_disable()
+        {
+            try
+            {
+                foreach (Control control in Controls)
+                {
+                    Button button = (Button)control;
+                    button.Enabled = false;
+                }
+            }
+            catch { }
+        }
+
         private void player_winner()
         { 
             bool game_over = false;
@@ -104,15 +117,6 @@ namespace Tic_Tac_Toe
                     MessageBox.Show("Game Over\n" + ("It's a Draw"));
             }
             
-        }
-
-        private void buttons_disable()
-        {
-            foreach (Control control in Controls)
-            {
-                Button button = (Button)control;
-                    button.Enabled = false;
-            }
         }
     }
 }
