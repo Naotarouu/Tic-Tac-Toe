@@ -41,6 +41,8 @@ namespace Tic_Tac_Toe
             else
                 button.Text = "X";
 
+            count = count + 1;
+
             player_winner();
         }
 
@@ -77,7 +79,8 @@ namespace Tic_Tac_Toe
             }
             else
             {
-                
+                if (count == 9)
+                    MessageBox.Show("Game Over\n" + ("It's a Draw"));
             }
             
            
