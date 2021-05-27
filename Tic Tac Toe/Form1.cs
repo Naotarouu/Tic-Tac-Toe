@@ -88,6 +88,8 @@ namespace Tic_Tac_Toe
 
             if (game_over)
             {
+                buttons_disable();
+
                 String win = "";
                 if (turn)
                     win = "O";
@@ -104,5 +106,13 @@ namespace Tic_Tac_Toe
             
         }
 
+        private void buttons_disable()
+        {
+            foreach (Control control in Controls)
+            {
+                Button button = (Button)control;
+                    button.Enabled = false;
+            }
+        }
     }
 }
