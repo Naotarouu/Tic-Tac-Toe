@@ -45,7 +45,8 @@ namespace Tic_Tac_Toe
 
         private void click_helpTool(object sender, EventArgs e)
         {
-            MessageBox.Show("The first who can make diagonal or straight line wins.");
+            MessageBox.Show("A two player game where the one who succeeds in placing three of their marks in a " +
+                "diagonal, horizontal, or vertical row is the winner.");
         }
 
         private void clickButton(object sender, EventArgs e)
