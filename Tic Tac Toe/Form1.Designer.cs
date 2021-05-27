@@ -62,6 +62,7 @@ namespace Tic_Tac_Toe
             this.new_gameTool.Name = "new_gameTool";
             this.new_gameTool.Size = new System.Drawing.Size(77, 20);
             this.new_gameTool.Text = "New Game";
+            this.new_gameTool.Click += new System.EventHandler(this.click_newgame);
             // 
             // toolHelp
             // 

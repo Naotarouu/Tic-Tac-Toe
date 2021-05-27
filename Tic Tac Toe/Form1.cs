@@ -25,6 +25,24 @@ namespace Tic_Tac_Toe
 
         }
 
+        private void click_newgame(object sender, EventArgs e)
+        {
+            count = 0;
+            turn = true;
+
+            try
+            {
+                foreach (Control control in Controls)
+                {
+                    Button button = (Button)control;
+                    button.Enabled = true;
+                    button.Text = "";
+                }
+
+            }
+            catch { }
+        }
+
         private void click_helpTool(object sender, EventArgs e)
         {
             MessageBox.Show("The first who can make diagonal or straight line wins.");
@@ -83,9 +101,6 @@ namespace Tic_Tac_Toe
                     MessageBox.Show("Game Over\n" + ("It's a Draw"));
             }
             
-           
-            
-
         }
 
     }
