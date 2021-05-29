@@ -31,6 +31,7 @@ namespace Tic_Tac_Toe
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.new_gameTool = new System.Windows.Forms.ToolStripMenuItem();
+            this.reset_countTool = new System.Windows.Forms.ToolStripMenuItem();
             this.toolHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -41,10 +42,12 @@ namespace Tic_Tac_Toe
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.reset_countTool = new System.Windows.Forms.ToolStripMenuItem();
+            this.xLabel = new System.Windows.Forms.Label();
+            this.oLabel = new System.Windows.Forms.Label();
+            this.drawLabel = new System.Windows.Forms.Label();
+            this.x_win_count = new System.Windows.Forms.Label();
+            this.o_win_count = new System.Windows.Forms.Label();
+            this.draw_count = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +71,13 @@ namespace Tic_Tac_Toe
             this.new_gameTool.Size = new System.Drawing.Size(77, 20);
             this.new_gameTool.Text = "New Game";
             this.new_gameTool.Click += new System.EventHandler(this.click_newgame);
+            // 
+            // reset_countTool
+            // 
+            this.reset_countTool.Name = "reset_countTool";
+            this.reset_countTool.Size = new System.Drawing.Size(83, 20);
+            this.reset_countTool.Text = "Reset Count";
+            this.reset_countTool.Click += new System.EventHandler(this.clickReset_count);
             // 
             // toolHelp
             // 
@@ -166,51 +176,74 @@ namespace Tic_Tac_Toe
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.clickButton);
             // 
-            // label1
+            // xLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(117, 327);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 15);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "X Win Count:";
+            this.xLabel.AutoSize = true;
+            this.xLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.xLabel.Location = new System.Drawing.Point(117, 327);
+            this.xLabel.Name = "xLabel";
+            this.xLabel.Size = new System.Drawing.Size(79, 15);
+            this.xLabel.TabIndex = 10;
+            this.xLabel.Text = "X Win Count:";
             // 
-            // label2
+            // oLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(116, 342);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 15);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "O Win Count:";
+            this.oLabel.AutoSize = true;
+            this.oLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.oLabel.Location = new System.Drawing.Point(116, 342);
+            this.oLabel.Name = "oLabel";
+            this.oLabel.Size = new System.Drawing.Size(80, 15);
+            this.oLabel.TabIndex = 11;
+            this.oLabel.Text = "O Win Count:";
             // 
-            // label3
+            // drawLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(120, 357);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 15);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Draw Count:";
+            this.drawLabel.AutoSize = true;
+            this.drawLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.drawLabel.Location = new System.Drawing.Point(120, 357);
+            this.drawLabel.Name = "drawLabel";
+            this.drawLabel.Size = new System.Drawing.Size(76, 15);
+            this.drawLabel.TabIndex = 12;
+            this.drawLabel.Text = "Draw Count:";
             // 
-            // reset_countTool
+            // x_win_count
             // 
-            this.reset_countTool.Name = "reset_countTool";
-            this.reset_countTool.Size = new System.Drawing.Size(83, 20);
-            this.reset_countTool.Text = "Reset Count";
-            this.reset_countTool.Click += new System.EventHandler(this.clickReset_count);
+            this.x_win_count.AutoSize = true;
+            this.x_win_count.Location = new System.Drawing.Point(196, 327);
+            this.x_win_count.Name = "x_win_count";
+            this.x_win_count.Size = new System.Drawing.Size(13, 15);
+            this.x_win_count.TabIndex = 13;
+            this.x_win_count.Text = "0";
+            // 
+            // o_win_count
+            // 
+            this.o_win_count.AutoSize = true;
+            this.o_win_count.Location = new System.Drawing.Point(196, 342);
+            this.o_win_count.Name = "o_win_count";
+            this.o_win_count.Size = new System.Drawing.Size(13, 15);
+            this.o_win_count.TabIndex = 14;
+            this.o_win_count.Text = "0";
+            // 
+            // draw_count
+            // 
+            this.draw_count.AutoSize = true;
+            this.draw_count.Location = new System.Drawing.Point(196, 357);
+            this.draw_count.Name = "draw_count";
+            this.draw_count.Size = new System.Drawing.Size(13, 15);
+            this.draw_count.TabIndex = 15;
+            this.draw_count.Text = "0";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(338, 379);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.draw_count);
+            this.Controls.Add(this.o_win_count);
+            this.Controls.Add(this.x_win_count);
+            this.Controls.Add(this.drawLabel);
+            this.Controls.Add(this.oLabel);
+            this.Controls.Add(this.xLabel);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
@@ -248,9 +281,13 @@ namespace Tic_Tac_Toe
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.ToolStripMenuItem reset_countTool;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label xLabel;
+        private System.Windows.Forms.Label oLabel;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label drawLabel;
+        private System.Windows.Forms.Label x_win_count;
+        private System.Windows.Forms.Label o_win_count;
+        private System.Windows.Forms.Label draw_count;
     }
 }
 

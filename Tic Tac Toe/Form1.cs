@@ -105,23 +105,34 @@ namespace Tic_Tac_Toe
 
                 String win = "";
                 if (turn)
+                {
                     win = "O";
+                    o_win_count.Text = (Int32.Parse(o_win_count.Text) + 1).ToString();
+                }
                 else
+                {
                     win = "X";
+                    x_win_count.Text = (Int32.Parse(x_win_count.Text) + 1).ToString();
+                }
 
                 MessageBox.Show("Game Over\n" + win + " wins");
             }
             else
             {
                 if (count == 9)
+                {
                     MessageBox.Show("Game Over\n" + ("It's a Draw"));
+                    draw_count.Text = (Int32.Parse(draw_count.Text) + 1).ToString();
+                }
             }
             
         }
 
         private void clickReset_count(object sender, EventArgs e)
         {
-            
+            x_win_count.Text = "0";
+            o_win_count.Text = "0";
+            draw_count.Text = "0";
         }
     }
 }
