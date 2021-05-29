@@ -29,6 +29,7 @@ namespace Tic_Tac_Toe
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.new_gameTool = new System.Windows.Forms.ToolStripMenuItem();
             this.reset_countTool = new System.Windows.Forms.ToolStripMenuItem();
@@ -254,6 +255,7 @@ namespace Tic_Tac_Toe
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Form1";

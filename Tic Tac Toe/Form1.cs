@@ -39,8 +39,7 @@ namespace Tic_Tac_Toe
                     button.Text = "";
                 }
                 catch { }
-            }
-                    
+            }                   
         }
 
         private void clickReset_count(object sender, EventArgs e)
@@ -131,9 +130,7 @@ namespace Tic_Tac_Toe
                     MessageBox.Show("Game Over\n" + ("It's a Draw"));
                     draw_count.Text = (Int32.Parse(draw_count.Text) + 1).ToString();
                 }
-            }
-            
+            }           
         }
-
     }
 }
