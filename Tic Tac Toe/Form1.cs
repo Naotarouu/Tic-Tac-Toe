@@ -43,6 +43,13 @@ namespace Tic_Tac_Toe
                     
         }
 
+        private void clickReset_count(object sender, EventArgs e)
+        {
+            x_win_count.Text = "0";
+            o_win_count.Text = "0";
+            draw_count.Text = "0";
+        }
+
         private void click_helpTool(object sender, EventArgs e)
         {
             MessageBox.Show("A two player game where the one who succeeds in placing three of their marks in a " +
@@ -128,11 +135,5 @@ namespace Tic_Tac_Toe
             
         }
 
-        private void clickReset_count(object sender, EventArgs e)
-        {
-            x_win_count.Text = "0";
-            o_win_count.Text = "0";
-            draw_count.Text = "0";
-        }
     }
 }
