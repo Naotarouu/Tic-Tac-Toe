@@ -74,15 +74,15 @@ namespace Tic_Tac_Toe
 
         private void buttons_disable()
         {
-            try
+            foreach (Control control in Controls)
             {
-                foreach (Control control in Controls)
+                try
                 {
                     Button button = (Button)control;
                     button.Enabled = false;
                 }
+                catch { }
             }
-            catch { }
         }
 
         private void player_winner()
