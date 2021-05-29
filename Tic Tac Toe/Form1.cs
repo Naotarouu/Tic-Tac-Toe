@@ -118,5 +118,10 @@ namespace Tic_Tac_Toe
             }
             
         }
+
+        private void clickReset_count(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
