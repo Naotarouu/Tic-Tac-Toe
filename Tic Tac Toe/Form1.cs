@@ -30,17 +30,17 @@ namespace Tic_Tac_Toe
             count = 0;
             turn = true;
 
-            try
+            foreach (Control control in Controls)
             {
-                foreach (Control control in Controls)
+                try
                 {
                     Button button = (Button)control;
                     button.Enabled = true;
                     button.Text = "";
                 }
-
+                catch { }
             }
-            catch { }
+                    
         }
 
         private void click_helpTool(object sender, EventArgs e)
